@@ -29,11 +29,11 @@ function validateInput(testInput) {
     
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     let pilotStatus = validateInput(pilot);
     let copilotStatus = validateInput(copilot);
     let fuelStatus = validateInput(fuelLevel);
-    let cargoStatus = validateInput(cargoLevel)
+    let cargoStatus = validateInput(cargoMass)
 
     if (pilotStatus === "Empty" || copilotStatus === "Empty" || fuelStatus === "Not a Number" || cargoStatus === "Not a Number") {
         alert("All fields are required!");
@@ -49,8 +49,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let launchStatus = document.getElementById("launchStatus");
     pilot = document.getElementById("pilotStatus");
     copilot = document.getElementById("copilotStatus");
-    fuelLevel = document.getElementById("fuelStatus");
-    cargoLevel = document.getElementById("cargoStatus");
+    fuelLevel = document.getElementById("fuelLevel");
+    cargoMass = document.getElementById("cargoMass");
 
     let pilotName = 'Chris';
     let copilotName = 'Blake';
@@ -60,17 +60,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     if (fuelLevel <10000) {
         faultyItems.style.visibility = 'visible';
-        fuelStatus.innerHTML = "Not enough fuel for return journey.";
+        document.getElementById("fuelStatus").innerHTML = "Not enough fuel for return journey.";
         launchStatus.innerHTML = "Shuttle not ready for launch."
         launchStatus.style.color = 'red';
     } else if (cargoMass > 10000) {
         faultyItems.style.visibility = 'visible';
-        cargoStatus.innerHTML = "Cargo mass too high for launch.";
+        document.getElementById("cargoStatus").innerHTML = "Cargo mass too high for launch.";
         launchStatus.innerHTML = "Shuttle not ready for launch.";
         launchStatus.style.color = 'red';
     } else {
         faultyItems.style.visibility = 'hidden';
-        launchStatus.innerHTML = "Shuttle is ready for launch";
+        document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = 'green';
     }  
 }
