@@ -26,7 +26,7 @@ window.addEventListener("load", function() {
        console.log(listedPlanets);
        let finalDestinationIndex = pickPlanet(listedPlanets);
        let finalDestination = listedPlanets[finalDestinationIndex];
-       addDestinationInfo(document, finalDestination.name, finalDestination.diameter, finalDestination.star, finalDestination.distance, finalDestination.moons, finalDestination.image);
+       addDestinationInfo(document, finalDestination.name, finalDestination.diameter, finalDestination.star, finalDestination.distance, finalDestination.moons, finalDestination.imageUrl);
    })
    
 });

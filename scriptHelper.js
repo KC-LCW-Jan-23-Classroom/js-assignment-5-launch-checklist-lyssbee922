@@ -53,26 +53,32 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     cargoMass = document.getElementById("cargoMass");
 
     let pilotName = 'Chris';
-    let copilotName = 'Blake';
+    let copilotName = 'Bob';
 
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName} is ready for launch`;
     document.getElementById("copilotStatus").innerHTML= `Co-pilot ${copilotName} is ready for launch`;
 
     if (fuelLevel <10000) {
         faultyItems.style.visibility = 'visible';
-        document.getElementById("fuelStatus").innerHTML = "Not enough fuel for return journey.";
+        document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch.";
         launchStatus.innerHTML = "Shuttle not ready for launch."
-        launchStatus.style.color = 'red';
+        launchStatus.style.color = 'rgb(199, 37, 78)';
     } else if (cargoMass > 10000) {
         faultyItems.style.visibility = 'visible';
-        document.getElementById("cargoStatus").innerHTML = "Cargo mass too high for launch.";
-        launchStatus.innerHTML = "Shuttle not ready for launch.";
-        launchStatus.style.color = 'red';
+        document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch.";
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch.";
+        launchStatus.style.color = 'rgb(199, 37, 78)';
+    } else if (fuelLevel < 10000 && cargoMass > 10000) {
+        faultyItems.style.visibility = 'visible';
+        document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch.";
+        document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch.";
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch.";
+        launchStatus.style.color = 'rgb(199, 37, 78)';
     } else {
         faultyItems.style.visibility = 'hidden';
         document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = 'green';
-    }  
+    }  1
 }
 
 async function myFetch() {
