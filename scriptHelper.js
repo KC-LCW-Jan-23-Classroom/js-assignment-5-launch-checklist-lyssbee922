@@ -45,12 +45,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         return;
     }
 
-    let faultyItems = document.getElementbyId("faultyItems");
-    let launchStatus = document.getElementbyId("launchStatus");
-    pilot = document.getElementbyId("pilotStatus");
-    copilot = document.getElementbyId("copilotStatus");
-    fuelLevel = document.getElementbyId("fuelStatus");
-    cargoLevel = document.getElementbyId("cargoStatus");
+    let faultyItems = document.getElementById("faultyItems");
+    let launchStatus = document.getElementById("launchStatus");
+    pilot = document.getElementById("pilotStatus");
+    copilot = document.getElementById("copilotStatus");
+    fuelLevel = document.getElementById("fuelStatus");
+    cargoLevel = document.getElementById("cargoStatus");
 
     let pilotName = Chris;
     let copilotName = Blake;
