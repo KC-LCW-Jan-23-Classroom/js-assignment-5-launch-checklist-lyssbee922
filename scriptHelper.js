@@ -34,7 +34,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     let copilotStatus = validateInput(copilot);
     let fuelStatus = validateInput(fuelLevel);
     let cargoStatus = validateInput(cargoMass)
-    let list;
+
 
     if (pilotStatus === "Empty" || copilotStatus === "Empty" || fuelStatus === "Not a Number" || cargoStatus === "Not a Number") {
         alert("All fields are required!");
