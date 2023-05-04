@@ -51,7 +51,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     copilot = document.getElementById("copilotStatus");
     fuelLevel = document.getElementById("fuelLevel");
     cargoMass = document.getElementById("cargoMass");
-    // list = document.getElementById("list").style = 'hidden';
+    list = document.getElementById("list").style = 'hidden';
 ;
     let pilotName = 'Chris';
     let copilotName = 'Bob';
